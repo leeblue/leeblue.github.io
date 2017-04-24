@@ -103,7 +103,7 @@
 <meta property="og:image" content="http://yoursite.com/2017/04/24/人脸检测系列一/Screen%20Shot%202017-04-24%20at%208.19.40%20PM.png">
 <meta property="og:image" content="http://yoursite.com/2017/04/24/人脸检测系列一/Screen%20Shot%202017-04-24%20at%208.23.03%20PM.png">
 <meta property="og:image" content="http://yoursite.com/2017/04/24/人脸检测系列一/Screen%20Shot%202017-04-24%20at%208.24.09%20PM.png">
-<meta property="og:updated_time" content="2017-04-24T12:48:36.000Z">
+<meta property="og:updated_time" content="2017-04-24T13:31:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="人脸检测系列（一）">
 <meta name="twitter:description" content="接下来打算介绍一系列关于人脸检测的内容，随着视频业务和机器学习的逐渐火热，相关的人脸检测又被推到了风口浪尖，也打算趁着毕业的时间完成这个系列的文章，从无到有，一步步实现自己的人脸识别检测器。 工欲善其事，必先利其器！ 在文章开始前，我觉得还是很必要了解下关于人脸检测的很多背景知识和基本的理论知识，毕竟，磨刀不误砍柴功。 首先大概简要介绍下当前主流的人脸识别状况：  主流的开源人脸识别当数Intel">
@@ -390,7 +390,7 @@
 </ul>
 </blockquote>
 <p><em>这里我也简单补充下，刚开始看会让人很迷惑，你可以认为这里的xn就是人脸样本，yn就是人脸样本的取值，比如我默认人脸样本的yn = 1，分人脸样本的yn = 0，这里的（0，1）就是已知的布尔函数集 F，f 就是yn赋值的那个操作了，那么同理 S 就是那个样本集合了。Pr[h(x)!=h(x)] 可以认为是 检测人脸的错误率，而h可以认为是成功检测的概率。</em></p>
-<p><strong>接下来主要介绍AdaBoost进行人脸检测的主要流程：</strong></p>
+<p><strong>接下来主要介绍AdaBoost进行人脸检测中分类器训练的主要流程：</strong></p>
 <blockquote>
 <p>(1)输入N个标记好的训练样本集合{(1,c(1)),(2,c(2)),…,(n,c(N))},其中1，…，N代表样本的序号，c(N)代表样本类别的标记，取值分别为0，1，其中1表示为人脸，0表示为非人脸。</p>
 <p>(2)初始化权重：若yi = 0的样本为m个，则w(1,i) = 1/m;若yi = 1的样本为n个，则w(1,n) = 1/n；</p>
@@ -420,6 +420,7 @@
 </li>
 </ul>
 </blockquote>
+<p>然后就可以利用训练出来的强分类器进行人脸识别了。</p>
 
       
     </div>
