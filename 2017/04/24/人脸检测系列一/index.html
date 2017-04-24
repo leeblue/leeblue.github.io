@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="人脸检测," />
 
 
 
@@ -90,19 +90,17 @@
 
 
 
-<meta name="description" content="今天正式开始通过hexo和git的方式重新搭建blog，今后也会在这里更新很多干货，搭建完平台的第一篇blog主要是介绍下今后如何通过命令行更新hexo 在此之前我想先介绍下hexo的发音 hack so  hexo基本操作： hexo new xxx （hexo n xxx）这里是通过hexo new 来创建新的blog，同时会在source/_post目录下生成xxx.mk的文件，然后可以通过">
-<meta name="keywords">
+<meta name="description" content="接下来打算介绍一系列关于人脸检测的内容，随着视频业务和机器学习的逐渐火热，相关的人脸检测又被推到了风口浪尖，也打算趁着毕业的时间完成这个系列的文章，从无到有，一步步实现自己的人脸识别检测器。 工欲善其事，必先利其器！ 在文章开始前，我觉得还是很必要了解下关于人脸检测的很多背景知识和基本的理论知识，毕竟，磨刀不误砍柴功。 首先大概简要介绍下当前主流的人脸识别状况：  主流的开源人脸识别当数Intel">
+<meta name="keywords" content="人脸检测">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo基本命令操作">
-<meta property="og:url" content="http://yoursite.com/2017/04/22/hexo基本命令操作/index.html">
+<meta property="og:title" content="人脸检测系列（一）">
+<meta property="og:url" content="http://yoursite.com/2017/04/24/人脸检测系列一/index.html">
 <meta property="og:site_name" content="Leex's Blog">
-<meta property="og:description" content="今天正式开始通过hexo和git的方式重新搭建blog，今后也会在这里更新很多干货，搭建完平台的第一篇blog主要是介绍下今后如何通过命令行更新hexo 在此之前我想先介绍下hexo的发音 hack so  hexo基本操作： hexo new xxx （hexo n xxx）这里是通过hexo new 来创建新的blog，同时会在source/_post目录下生成xxx.mk的文件，然后可以通过">
-<meta property="og:image" content="http://yoursite.com/2017/04/22/hexo基本命令操作/Screen%20Shot%202017-04-24%20at%207.35.19%20PM.png">
-<meta property="og:updated_time" content="2017-04-24T11:56:33.000Z">
+<meta property="og:description" content="接下来打算介绍一系列关于人脸检测的内容，随着视频业务和机器学习的逐渐火热，相关的人脸检测又被推到了风口浪尖，也打算趁着毕业的时间完成这个系列的文章，从无到有，一步步实现自己的人脸识别检测器。 工欲善其事，必先利其器！ 在文章开始前，我觉得还是很必要了解下关于人脸检测的很多背景知识和基本的理论知识，毕竟，磨刀不误砍柴功。 首先大概简要介绍下当前主流的人脸识别状况：  主流的开源人脸识别当数Intel">
+<meta property="og:updated_time" content="2017-04-24T12:02:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo基本命令操作">
-<meta name="twitter:description" content="今天正式开始通过hexo和git的方式重新搭建blog，今后也会在这里更新很多干货，搭建完平台的第一篇blog主要是介绍下今后如何通过命令行更新hexo 在此之前我想先介绍下hexo的发音 hack so  hexo基本操作： hexo new xxx （hexo n xxx）这里是通过hexo new 来创建新的blog，同时会在source/_post目录下生成xxx.mk的文件，然后可以通过">
-<meta name="twitter:image" content="http://yoursite.com/2017/04/22/hexo基本命令操作/Screen%20Shot%202017-04-24%20at%207.35.19%20PM.png">
+<meta name="twitter:title" content="人脸检测系列（一）">
+<meta name="twitter:description" content="接下来打算介绍一系列关于人脸检测的内容，随着视频业务和机器学习的逐渐火热，相关的人脸检测又被推到了风口浪尖，也打算趁着毕业的时间完成这个系列的文章，从无到有，一步步实现自己的人脸识别检测器。 工欲善其事，必先利其器！ 在文章开始前，我觉得还是很必要了解下关于人脸检测的很多背景知识和基本的理论知识，毕竟，磨刀不误砍柴功。 首先大概简要介绍下当前主流的人脸识别状况：  主流的开源人脸识别当数Intel">
 
 
 
@@ -130,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/22/hexo基本命令操作/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/24/人脸检测系列一/"/>
 
 
 
 
 
-  <title>hexo基本命令操作 | Leex's Blog</title>
+  <title>人脸检测系列（一） | Leex's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -275,7 +273,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/22/hexo基本命令操作/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/24/人脸检测系列一/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Leex Li">
@@ -296,7 +294,7 @@
             
             
               
-                hexo基本命令操作
+                人脸检测系列（一）
               
             
           </h1>
@@ -311,8 +309,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-22T20:30:35+08:00">
-                2017-04-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-24T13:57:25+08:00">
+                2017-04-24
               </time>
             
 
@@ -346,38 +344,53 @@
       
 
       
-        <h6 id="今天正式开始通过hexo和git的方式重新搭建blog，今后也会在这里更新很多干货，搭建完平台的第一篇blog主要是介绍下今后如何通过命令行更新hexo"><a href="#今天正式开始通过hexo和git的方式重新搭建blog，今后也会在这里更新很多干货，搭建完平台的第一篇blog主要是介绍下今后如何通过命令行更新hexo" class="headerlink" title="今天正式开始通过hexo和git的方式重新搭建blog，今后也会在这里更新很多干货，搭建完平台的第一篇blog主要是介绍下今后如何通过命令行更新hexo"></a>今天正式开始通过hexo和git的方式重新搭建blog，今后也会在这里更新很多干货，搭建完平台的第一篇blog主要是介绍下今后如何通过命令行更新hexo</h6><blockquote>
-<p>在此之前我想先介绍下hexo的发音 hack so</p>
+        <p><em>接下来打算介绍一系列关于人脸检测的内容，随着视频业务和机器学习的逐渐火热，相关的人脸检测又被推到了风口浪尖，也打算趁着毕业的时间完成这个系列的文章，从无到有，一步步实现自己的人脸识别检测器。</em></p>
+<p>工欲善其事，必先利其器！</p>
+<p>在文章开始前，我觉得还是很必要了解下关于人脸检测的很多背景知识和基本的理论知识，毕竟，磨刀不误砍柴功。</p>
+<p>首先大概简要介绍下当前主流的人脸识别状况：</p>
+<blockquote>
+<p>主流的开源人脸识别当数Intel的open CV开源人脸识别框架,国内的百度、腾讯等大厂也都有自己的人脸识别系统，人脸识别的效果也都是很好。数不清的美颜相机和动态贴着也逐渐霸占了社交的分享，可以说人脸识别已经变的越来越重要。</p>
+<p>除此之外很多高校比如mit、清华大学和上海交通大学等都对于人脸识别投入了很大的关注。</p>
 </blockquote>
-<h6 id="hexo基本操作："><a href="#hexo基本操作：" class="headerlink" title="hexo基本操作："></a>hexo基本操作：</h6><blockquote>
-<p><strong>hexo new xxx （hexo n xxx）</strong>这里是通过hexo new 来创建新的blog，同时会在source/_post目录下生成xxx.mk的文件，然后可以通过编辑mk文件实现编辑文档。</p>
-<p><strong>hexo generate （hexo g）</strong>这个命令是生成静态页面</p>
-<p><strong>hexo deploy （hexo d）</strong>这个命令是进行页面发布使用，发布成功后可以到对应xxx.github.io仓库的setting中查看最后的效果。</p>
-<p>既然讲到了新增博客，那么删除博客和修改博客肯定也是不可避免的话题，这里的删除博客对应的操作就是删除source/_post目录下生成的xxx.mk文件；同理，修改博客也是修改对应的xxx.mk文件，然后然后依次调用<strong>hexo g</strong> 和 <strong>hexo d</strong>命令更新blog。</p>
-<p>关于如何修改个人信息：这里推荐使用next的主题，当然不管是什么主题，主要的操作方式都是一样的。</p>
-<p>如果需要修改主题，那么只需要将git上clone下来的主题和其他主题一起放到主目录的themes就可以了，然后修改主目录下_config中的theme为对应的主题就可以了，<em>注意，(冒号)：后面有个空格！</em></p>
-<p>修改个人信息主要是进入主题录下，依然是修改_config.yml文件：</p>
+<p>介绍下主流的集中人脸识别的算法：</p>
+<blockquote>
+<p><strong>基于特征的检测方法：</strong></p>
+<p>（1）利用皮肤特征生成肤色分类器，转到不同的颜色空间进行聚类，往往需要结合其他的方法一起使用，并且比较容易受到环境的影响。</p>
+<p>（2）根据面部特征进行的检测。比如根据双眼模版就行匹配，根据人脸的结构进行匹配等等；但是这种检测方法比较容易受到表情的影响。 </p>
+</blockquote>
+<p><em>基于<strong>统计模型</strong>的检测方法是目前的主流人脸识别方向，不再基于人们对于人脸的先验知识，而是通过大量的样本训练处符合要求的人脸模型，产生可靠的人脸检测结果，对于这种模型而要，如果样本的数量越多那么检测的效果将会更好。</em></p>
+<blockquote>
+<p><strong>基于统计模型的检测方法：</strong></p>
+<p>（1）支持向量机的检测算法</p>
+<p>（2）基于神经网络的检测算法</p>
+<p>（3）基于隐形马尔可夫的检测算法</p>
+<p>（4）基于AdaBoost的人脸检测算法</p>
+</blockquote>
+<p>对于上面四种基于统计模型的检测算法，AdaBoost算法具有较好的即时性和检测率，也是本文着重进行介绍和实现的算法。</p>
+<p><strong>AdaBoost算法的理论必备知识</strong></p>
+<blockquote>
+<p>AdaBoost算法是一种机器学习方法，这个算法的基本思想就是学习一系列的弱分类器，在这个过程中，每一个分类器对于它前一个分类器导致的错误分类例子给予更大的重视（权重），通过重新计算权重，在学习下一个分类器。</p>
+<p>最后通过级联每个层级分类器实现最终的级联分类器，实现快速的人脸检测。</p>
+</blockquote>
+<p><em>很拗口对不对？现在很迷惑没有关系，我们会逐渐揭开人脸检测的迷雾，学习完之后，你可以再过来重新品味这句话。</em></p>
+<blockquote>
+<p>AdaBoost算法是基于Boosting算法的。那么什么是Boosting算法呢？Boosting是一种可以提高任意给定学习算法性能的方法，它的思想源于“可能近似正确模型（PAC）”。</p>
+<p>PAC模型中定义了两个概念：强学习和弱学习。</p>
+<p>Boosting算法主要在理论上证明了任意的一个弱学习算法可以通过加强提升到任意正确率的强学习算法，并通过一种多项式级的算法来实现这个加强过程。</p>
 <ul>
-<li>title 对应blog标题</li>
-<li>subtitle 对应子标题</li>
-<li>description 对应blog描述，可以理解为个性签名</li>
-<li>author 作者姓名</li>
-<li>language 语言，这里推荐使用zh-Hans，可以减少语言错乱的bug</li>
-<li>timezone可以忽略，系统会选取电脑的时域填充</li>
+<li>强学习：另S是包含N个数据点（x1,y1)、(x2,y2)……(xn,yn)的样本集，其中xn为按照某种固定且未知的分布D(x)随机独立抽取的yn = f(xn), f 则属于某个已知的布尔函数集。如果对于任意的 f ∈ F ，任意的 D，任意的0&lt;=ε，δ&lt;=1/2,学习算法生成一个满足条件的Pr[h(x)!=h(x)]&lt;=ε的估计h概率大于1-δ，并且学习算法的运行时间与1/δ和1/ε之间为多项式关系。则称这种学习算法为强学习算法。</li>
+<li>弱学习：弱学习算法的定义基本与强学习算法相同，但是要求更低，只要存在一组满足要求的ε，δ就可以。</li>
 </ul>
 </blockquote>
-<p>如果你觉得修改完主题后还是不爽，系统默认的页面太少了，那么很好，你还可以继续修改相应主题下面的_config.yml文件，找到menu项目，可以将categories、about和其他的item前面的#删掉，取消注释，此时更新和上传配置（通过hexo g，heox d），你会发现菜单栏多了几个选项，兴奋的你肯定会迫不及待的去点击这些菜单，等着酷炫的效果在此振奋人心，然后，你会发现404！</p>
-<h3 id="配置你的个性item"><a href="#配置你的个性item" class="headerlink" title="配置你的个性item"></a>配置你的个性item</h3><blockquote>
-<p>仅仅通过theme下面打开了item 的入口是仅仅不够的，我们还需要配置相应tiem的页面。</p>
-<p>这里通过 <em>hexo new page “xxx”</em>  实现默认页面的生成，此时你进入source页面便会发现多了一个响应姓名的文件夹，不要急着更新和上传，配置并没有结束。点看目录下的mk文件，在最上面的title那一栏，新增一个<em>type： “xxx“</em> </p>
-<p>的键值对，此时才算是真正完成了配置，至于其他需要什么个性化的内容，就看自己的心情，随便编辑mk文件就可以了。</p>
-</blockquote>
-<p><img src="/2017/04/22/hexo基本命令操作/Screen Shot 2017-04-24 at 7.35.19 PM.png" alt="item应该有的头部"></p>
-<h3 id="添加图片"><a href="#添加图片" class="headerlink" title="添加图片"></a>添加图片</h3><blockquote>
-<p>对于一篇神采奕奕的博客，不可能不配置图片的，但是我们的blog是要配置到网上的，虽然本地配置好图片可以正常现实，但是如果不进行特殊的处理，在线时就只有默认图片填充了，为了防止这种事情发生，这里我们还是有解决办法的：</p>
-<p><em>将主目录下_config.yml中设置 post_asset_folder:true</em> 这是什么意思呢？就是post的时候，也会将blog对应的asset文件夹一起上传。</p>
-<p>可是那里来的asset文件夹呢？通过<em>npm install <a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="external">https://github.com/CodeFalling/hexo-asset-image</a> —save</em>安装插件，实现每次新建博客时，都会自动创建同名的文件夹，我们可以用来保存图片。</p>
-<p>通过这个语句来实现 <em>! [ ] ( 目录名/文件名.png)</em>  （注意没有空格，我是为了防止直接被识别，特意加上去的）</p>
+<p><em>这里我也简单补充下，刚开始看会让人很迷惑，你可以认为这里的xn就是人脸样本，yn就是人脸样本的取值，比如我默认人脸样本的yn = 1，分人脸样本的yn = 0，这里的（0，1）就是已知的布尔函数集 F，f 就是yn赋值的那个操作了，那么同理 S 就是那个样本集合了。Pr[h(x)!=h(x)] 可以认为是 检测人脸的错误率，而h可以认为是成功检测的概率。</em></p>
+<p><strong>接下来主要介绍AdaBoost进行人脸检测的主要流程：</strong></p>
+<blockquote>
+<p>(1)输入N个标记好的训练样本集合{(1,c(1)),(2,c(2)),…,(n,c(N))},其中1，…，N代表样本的序号，c(N)代表样本类别的标记，取值分别为0，1，其中1表示为人脸，0表示为非人脸。</p>
+<p>(2)初始化权重：若yi = 0的样本为m个，则w(1,i) = 1/m;若yi = 1的样本为n个，则w(1,n) = 1/n；</p>
+<p>(3)执行下面循环，对于每轮t = 1 … T（t为循环的轮数）</p>
+<ul>
+<li>权重归一化：</li>
+</ul>
 </blockquote>
 
       
@@ -406,6 +419,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/人脸检测/" rel="tag"># 人脸检测</a>
+          
+        </div>
+      
 
       
         
@@ -415,15 +434,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/24/人脸检测系列一/" rel="next" title="人脸检测系列（一）">
-                <i class="fa fa-chevron-left"></i> 人脸检测系列（一）
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/22/hexo基本命令操作/" rel="prev" title="hexo基本命令操作">
+                hexo基本命令操作 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -470,17 +489,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/leexli.jpg"
@@ -533,22 +543,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#今天正式开始通过hexo和git的方式重新搭建blog，今后也会在这里更新很多干货，搭建完平台的第一篇blog主要是介绍下今后如何通过命令行更新hexo"><span class="nav-number">1.</span> <span class="nav-text">今天正式开始通过hexo和git的方式重新搭建blog，今后也会在这里更新很多干货，搭建完平台的第一篇blog主要是介绍下今后如何通过命令行更新hexo</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#hexo基本操作："><span class="nav-number">2.</span> <span class="nav-text">hexo基本操作：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置你的个性item"><span class="nav-number"></span> <span class="nav-text">配置你的个性item</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加图片"><span class="nav-number"></span> <span class="nav-text">添加图片</span></a></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
