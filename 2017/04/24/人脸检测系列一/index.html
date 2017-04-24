@@ -97,10 +97,17 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/24/人脸检测系列一/index.html">
 <meta property="og:site_name" content="Leex's Blog">
 <meta property="og:description" content="接下来打算介绍一系列关于人脸检测的内容，随着视频业务和机器学习的逐渐火热，相关的人脸检测又被推到了风口浪尖，也打算趁着毕业的时间完成这个系列的文章，从无到有，一步步实现自己的人脸识别检测器。 工欲善其事，必先利其器！ 在文章开始前，我觉得还是很必要了解下关于人脸检测的很多背景知识和基本的理论知识，毕竟，磨刀不误砍柴功。 首先大概简要介绍下当前主流的人脸识别状况：  主流的开源人脸识别当数Intel">
-<meta property="og:updated_time" content="2017-04-24T12:09:07.000Z">
+<meta property="og:image" content="http://yoursite.com/2017/04/24/人脸检测系列一/liyong/Documents/hexo/hexo/source/_posts/人脸检测系列一/Screen%20Shot%202017-04-24%20at%204.29.33%20PM.png%20=100">
+<meta property="og:image" content="http://yoursite.com/2017/04/24/人脸检测系列一/liyong/Documents/hexo/hexo/source/_posts/人脸检测系列一/Screen%20Shot%202017-04-24%20at%208.17.12%20PM.png">
+<meta property="og:image" content="http://yoursite.com/2017/04/24/人脸检测系列一/liyong/Documents/hexo/hexo/source/_posts/人脸检测系列一/Screen%20Shot%202017-04-24%20at%208.19.12%20PM.png">
+<meta property="og:image" content="http://yoursite.com/2017/04/24/人脸检测系列一/liyong/Documents/hexo/hexo/source/_posts/人脸检测系列一/Screen%20Shot%202017-04-24%20at%208.19.40%20PM.png">
+<meta property="og:image" content="http://yoursite.com/2017/04/24/人脸检测系列一/liyong/Documents/hexo/hexo/source/_posts/人脸检测系列一/Screen%20Shot%202017-04-24%20at%208.23.03%20PM.png">
+<meta property="og:image" content="http://yoursite.com/2017/04/24/人脸检测系列一/liyong/Documents/hexo/hexo/source/_posts/人脸检测系列一/Screen%20Shot%202017-04-24%20at%208.24.09%20PM.png">
+<meta property="og:updated_time" content="2017-04-24T12:27:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="人脸检测系列（一）">
 <meta name="twitter:description" content="接下来打算介绍一系列关于人脸检测的内容，随着视频业务和机器学习的逐渐火热，相关的人脸检测又被推到了风口浪尖，也打算趁着毕业的时间完成这个系列的文章，从无到有，一步步实现自己的人脸识别检测器。 工欲善其事，必先利其器！ 在文章开始前，我觉得还是很必要了解下关于人脸检测的很多背景知识和基本的理论知识，毕竟，磨刀不误砍柴功。 首先大概简要介绍下当前主流的人脸识别状况：  主流的开源人脸识别当数Intel">
+<meta name="twitter:image" content="http://yoursite.com/2017/04/24/人脸检测系列一/liyong/Documents/hexo/hexo/source/_posts/人脸检测系列一/Screen%20Shot%202017-04-24%20at%204.29.33%20PM.png%20=100">
 
 
 
@@ -389,10 +396,20 @@
 <p>(2)初始化权重：若yi = 0的样本为m个，则w(1,i) = 1/m;若yi = 1的样本为n个，则w(1,n) = 1/n；</p>
 <p>(3)执行下面循环，对于每轮t = 1 … T（t为循环的轮数）</p>
 <ul>
-<li>权重归一化：</li>
+<li><p>权重归一化：<img src="/2017/04/24/人脸检测系列一/liyong/Documents/hexo/hexo/source/_posts/人脸检测系列一/Screen Shot 2017-04-24 at 4.29.33 PM.png =100" alt="Screen Shot 2017-04-24 at 4.29.33 PM"></p>
+</li>
+<li><p>对于每一个特征j，生成对应的弱分类器hj，计算相对于当前权重的误差<img src="/2017/04/24/人脸检测系列一/liyong/Documents/hexo/hexo/source/_posts/人脸检测系列一/Screen Shot 2017-04-24 at 8.17.12 PM.png" alt="Screen Shot 2017-04-24 at 8.17.12 PM"></p>
+</li>
+<li><p>选择具有最小误差值εt的弱分类器ht加入到强分类器中</p>
+</li>
+<li><p>更新每个样本所对应的权重<img src="/2017/04/24/人脸检测系列一/liyong/Documents/hexo/hexo/source/_posts/人脸检测系列一/Screen Shot 2017-04-24 at 8.19.12 PM.png" alt="Screen Shot 2017-04-24 at 8.19.12 PM"></p>
+<p><img src="/2017/04/24/人脸检测系列一/liyong/Documents/hexo/hexo/source/_posts/人脸检测系列一/Screen Shot 2017-04-24 at 8.19.40 PM.png" alt="Screen Shot 2017-04-24 at 8.19.40 PM"></p>
+<p>上面式子中，若第i个样本xi被正确分类，则ei = 0，反之，ei = 1；</p>
+</li>
+<li><p>最后形成的强分类器为<img src="/2017/04/24/人脸检测系列一/liyong/Documents/hexo/hexo/source/_posts/人脸检测系列一/Screen Shot 2017-04-24 at 8.23.03 PM.png" alt="Screen Shot 2017-04-24 at 8.23.03 PM">其中<img src="/2017/04/24/人脸检测系列一/liyong/Documents/hexo/hexo/source/_posts/人脸检测系列一/Screen Shot 2017-04-24 at 8.24.09 PM.png" alt="Screen Shot 2017-04-24 at 8.24.09 PM"></p>
+</li>
 </ul>
 </blockquote>
-<p>a</p>
 
       
     </div>
