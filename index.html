@@ -513,17 +513,27 @@
 <p>(2)初始化权重：若yi = 0的样本为m个，则w(1,i) = 1/m;若yi = 1的样本为n个，则w(1,n) = 1/n；</p>
 <p>(3)执行下面循环，对于每轮t = 1 … T（t为循环的轮数）</p>
 <ul>
-<li><p>权重归一化：<img src="/2017/04/24/人脸检测系列一/Screen Shot 2017-04-24 at 4.29.33 PM.png =100" alt="Screen Shot 2017-04-24 at 4.29.33 PM"></p>
+<li><p>权重归一化：</p>
+<center><br><img src="/2017/04/24/人脸检测系列一/Screen Shot 2017-04-24 at 4.29.33 PM.png" width="25%" height="25%"><br></center>
 </li>
-<li><p>对于每一个特征j，生成对应的弱分类器hj，计算相对于当前权重的误差<img src="/2017/04/24/人脸检测系列一/Screen Shot 2017-04-24 at 8.17.12 PM.png" alt="Screen Shot 2017-04-24 at 8.17.12 PM"></p>
+<li><p>对于每一个特征j，生成对应的弱分类器hj，计算相对于当前权重的误差</p>
+<center><br><img src="/2017/04/24/人脸检测系列一/Screen Shot 2017-04-24 at 8.17.12 PM.png" width="35%" height="25%"><br></center>
 </li>
 <li><p>选择具有最小误差值εt的弱分类器ht加入到强分类器中</p>
 </li>
-<li><p>更新每个样本所对应的权重<img src="/2017/04/24/人脸检测系列一/Screen Shot 2017-04-24 at 8.19.12 PM.png" alt="Screen Shot 2017-04-24 at 8.19.12 PM"></p>
-<p><img src="/2017/04/24/人脸检测系列一/Screen Shot 2017-04-24 at 8.19.40 PM.png" alt="Screen Shot 2017-04-24 at 8.19.40 PM"></p>
+<li><p>更新每个样本所对应的权重</p>
+<center><br><img src="/2017/04/24/人脸检测系列一/Screen Shot 2017-04-24 at 8.19.12 PM.png" width="35%" height="25%"><br></center>
+
+<center><br><img src="/2017/04/24/人脸检测系列一/Screen Shot 2017-04-24 at 8.19.40 PM.png" width="25%" height="25%"><br></center>
+
 <p>上面式子中，若第i个样本xi被正确分类，则ei = 0，反之，ei = 1；</p>
 </li>
-<li><p>最后形成的强分类器为<img src="/2017/04/24/人脸检测系列一/Screen Shot 2017-04-24 at 8.23.03 PM.png" alt="Screen Shot 2017-04-24 at 8.23.03 PM">其中<img src="/2017/04/24/人脸检测系列一/Screen Shot 2017-04-24 at 8.24.09 PM.png" alt="Screen Shot 2017-04-24 at 8.24.09 PM"></p>
+<li><p>最后形成的强分类器为</p>
+<center><br><br><img src="/2017/04/24/人脸检测系列一/Screen Shot 2017-04-24 at 8.23.03 PM.png" width="45%"><br><br></center>
+
+<p>其中<center></center></p>
+<p><img src="/2017/04/24/人脸检测系列一/Screen Shot 2017-04-24 at 8.24.09 PM.png" width="22%"></p>
+<p></p>
 </li>
 </ul>
 </blockquote>
