@@ -97,10 +97,12 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/22/hexo基本命令操作/index.html">
 <meta property="og:site_name" content="Leex's Blog">
 <meta property="og:description" content="今天正式开始通过hexo和git的方式重新搭建blog，今后也会在这里更新很多干货，搭建完平台的第一篇blog主要是介绍下今后如何通过命令行更新hexo 在此之前我想先介绍下hexo的发音 hack so  hexo基本操作： hexo new xxx （hexo n xxx）这里是通过hexo new 来创建新的blog，同时会在source/_post目录下生成xxx.mk的文件，然后可以通过">
-<meta property="og:updated_time" content="2017-04-22T13:02:02.000Z">
+<meta property="og:image" content="http://yoursite.com/Users/liyong/Desktop/Screen%20Shot%202017-04-24%20at%207.35.19%20PM.png">
+<meta property="og:updated_time" content="2017-04-24T11:36:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo基本命令操作">
 <meta name="twitter:description" content="今天正式开始通过hexo和git的方式重新搭建blog，今后也会在这里更新很多干货，搭建完平台的第一篇blog主要是介绍下今后如何通过命令行更新hexo 在此之前我想先介绍下hexo的发音 hack so  hexo基本操作： hexo new xxx （hexo n xxx）这里是通过hexo new 来创建新的blog，同时会在source/_post目录下生成xxx.mk的文件，然后可以通过">
+<meta name="twitter:image" content="http://yoursite.com/Users/liyong/Desktop/Screen%20Shot%202017-04-24%20at%207.35.19%20PM.png">
 
 
 
@@ -352,7 +354,25 @@
 <p><strong>hexo generate （hexo g）</strong>这个命令是生成静态页面</p>
 <p><strong>hexo deploy （hexo d）</strong>这个命令是进行页面发布使用，发布成功后可以到对应xxx.github.io仓库的setting中查看最后的效果。</p>
 <p>既然讲到了新增博客，那么删除博客和修改博客肯定也是不可避免的话题，这里的删除博客对应的操作就是删除source/_post目录下生成的xxx.mk文件；同理，修改博客也是修改对应的xxx.mk文件，然后然后依次调用<strong>hexo g</strong> 和 <strong>hexo d</strong>命令更新blog。</p>
+<p>关于如何修改个人信息：这里推荐使用next的主题，当然不管是什么主题，主要的操作方式都是一样的。</p>
+<p>如果需要修改主题，那么只需要将git上clone下来的主题和其他主题一起放到主目录的themes就可以了，然后修改主目录下_config中的theme为对应的主题就可以了，<em>注意，(冒号)：后面有个空格！</em></p>
+<p>修改个人信息主要是进入主题录下，依然是修改_config.yml文件：</p>
+<ul>
+<li>title 对应blog标题</li>
+<li>subtitle 对应子标题</li>
+<li>description 对应blog描述，可以理解为个性签名</li>
+<li>author 作者姓名</li>
+<li>language 语言，这里推荐使用zh-Hans，可以减少语言错乱的bug</li>
+<li>timezone可以忽略，系统会选取电脑的时域填充</li>
+</ul>
 </blockquote>
+<p>如果你觉得修改完主题后还是不爽，系统默认的页面太少了，那么很好，你还可以继续修改相应主题下面的_config.yml文件，找到menu项目，可以将categories、about和其他的item前面的#删掉，取消注释，此时更新和上传配置（通过hexo g，heox d），你会发现菜单栏多了几个选项，兴奋的你肯定会迫不及待的去点击这些菜单，等着酷炫的效果在此振奋人心，然后，你会发现404！</p>
+<h3 id="配置你的个性item"><a href="#配置你的个性item" class="headerlink" title="配置你的个性item"></a>配置你的个性item</h3><blockquote>
+<p>仅仅通过theme下面打开了item 的入口是仅仅不够的，我们还需要配置相应tiem的页面。</p>
+<p>这里通过 <em>hexo new page “xxx”</em>  实现默认页面的生成，此时你进入source页面便会发现多了一个响应姓名的文件夹，不要急着更新和上传，配置并没有结束。点看目录下的mk文件，在最上面的title那一栏，新增一个<em>type： “xxx“</em> </p>
+<p>的键值对，此时才算是真正完成了配置，至于其他需要什么个性化的内容，就看自己的心情，随便编辑mk文件就可以了。</p>
+</blockquote>
+<p><img src="/Users/liyong/Desktop/Screen Shot 2017-04-24 at 7.35.19 PM.png" alt="item应给有的头部"></p>
 
       
     </div>
@@ -492,7 +512,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#今天正式开始通过hexo和git的方式重新搭建blog，今后也会在这里更新很多干货，搭建完平台的第一篇blog主要是介绍下今后如何通过命令行更新hexo"><span class="nav-number">1.</span> <span class="nav-text">今天正式开始通过hexo和git的方式重新搭建blog，今后也会在这里更新很多干货，搭建完平台的第一篇blog主要是介绍下今后如何通过命令行更新hexo</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#hexo基本操作："><span class="nav-number">2.</span> <span class="nav-text">hexo基本操作：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#今天正式开始通过hexo和git的方式重新搭建blog，今后也会在这里更新很多干货，搭建完平台的第一篇blog主要是介绍下今后如何通过命令行更新hexo"><span class="nav-number">1.</span> <span class="nav-text">今天正式开始通过hexo和git的方式重新搭建blog，今后也会在这里更新很多干货，搭建完平台的第一篇blog主要是介绍下今后如何通过命令行更新hexo</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#hexo基本操作："><span class="nav-number">2.</span> <span class="nav-text">hexo基本操作：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置你的个性item"><span class="nav-number"></span> <span class="nav-text">配置你的个性item</span></a></div>
             
 
           </div>
