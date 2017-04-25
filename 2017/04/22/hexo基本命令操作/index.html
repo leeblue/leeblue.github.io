@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Leex's Blog">
 <meta property="og:description" content="今天正式开始通过hexo和git的方式重新搭建blog，今后也会在这里更新很多干货，搭建完平台的第一篇blog主要是介绍下今后如何通过命令行更新hexo 在此之前我想先介绍下hexo的发音 hack so  hexo基本操作： hexo new xxx （hexo n xxx）这里是通过hexo new 来创建新的blog，同时会在source/_post目录下生成xxx.mk的文件，然后可以通过">
 <meta property="og:image" content="http://yoursite.com/2017/04/22/hexo基本命令操作/Screen%20Shot%202017-04-24%20at%207.35.19%20PM.png">
-<meta property="og:updated_time" content="2017-04-24T11:56:33.000Z">
+<meta property="og:updated_time" content="2017-04-25T12:36:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo基本命令操作">
 <meta name="twitter:description" content="今天正式开始通过hexo和git的方式重新搭建blog，今后也会在这里更新很多干货，搭建完平台的第一篇blog主要是介绍下今后如何通过命令行更新hexo 在此之前我想先介绍下hexo的发音 hack so  hexo基本操作： hexo new xxx （hexo n xxx）这里是通过hexo new 来创建新的blog，同时会在source/_post目录下生成xxx.mk的文件，然后可以通过">
@@ -372,7 +372,8 @@
 <p>这里通过 <em>hexo new page “xxx”</em>  实现默认页面的生成，此时你进入source页面便会发现多了一个响应姓名的文件夹，不要急着更新和上传，配置并没有结束。点看目录下的mk文件，在最上面的title那一栏，新增一个<em>type： “xxx“</em> </p>
 <p>的键值对，此时才算是真正完成了配置，至于其他需要什么个性化的内容，就看自己的心情，随便编辑mk文件就可以了。</p>
 </blockquote>
-<p><img src="/2017/04/22/hexo基本命令操作/Screen Shot 2017-04-24 at 7.35.19 PM.png" alt="item应该有的头部"></p>
+<center><br><br><img src="/2017/04/22/hexo基本命令操作/Screen Shot 2017-04-24 at 7.35.19 PM.png" width="35%"><br><br></center>
+
 <h3 id="添加图片"><a href="#添加图片" class="headerlink" title="添加图片"></a>添加图片</h3><blockquote>
 <p>对于一篇神采奕奕的博客，不可能不配置图片的，但是我们的blog是要配置到网上的，虽然本地配置好图片可以正常现实，但是如果不进行特殊的处理，在线时就只有默认图片填充了，为了防止这种事情发生，这里我们还是有解决办法的：</p>
 <p><em>将主目录下_config.yml中设置 post_asset_folder:true</em> 这是什么意思呢？就是post的时候，也会将blog对应的asset文件夹一起上传。</p>
