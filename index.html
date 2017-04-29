@@ -273,6 +273,388 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/29/VPNServicE详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Leex Li">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/leexli.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leex's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/29/VPNServicE详解/" itemprop="url">
+                  VPNServicE详解
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-29T21:38:03+08:00">
+                2017-04-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>TCP基础</strong></p>
+<p>数据在网络间传递主要通过tcp／udp传输层协议进行传递，两者都是给予ip协议。</p>
+<p>网络传输的时候需要注意的是，当数据超过路由器最大可以传输的单个数据包的时候，数据就会被分割，我们在做VPNService的时候，就需要注意几个地方。</p>
+<p>比如接受到的是http数据的时候，一般http中的数据会比较大，我们需要进行分包处理，这时候我们就需要记录这几个数据包，把数据包组合起来之后在回复数据。</p>
+<p>重点：HTTP协议一般会对数据进行压缩，这是个大坑，仅仅加密数据，对于HTTP的数据头不会进行压缩处理，我们可以选择先读取出数据压缩的方式，在对数据进行解压。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/28/关于Java-nio的内容/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Leex Li">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/leexli.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leex's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/28/关于Java-nio的内容/" itemprop="url">
+                  关于Java_nio的内容
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-28T21:16:43+08:00">
+                2017-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>Selecor</strong></p>
+<p>Selector是Java NIO中能够检测一个到多个Cannel的类，特点是通过selector可以使用一个线程管理所有通道，并且Selector可以知道通道是否为  <strong>事件</strong>  做好准备，可以大大减少线程切换带来的系统开销。</p>
+<p><strong>创建Seletor</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Selector selector = Selector.open();</div></pre></td></tr></table></figure>
+<p><strong>注册Cannel</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cannel.configureBlocking(<span class="keyword">false</span>);\</div><div class="line">  <span class="comment">//与Selector一起使用的时候，Channel必须处于非阻塞（se）模式下</span></div><div class="line">SelectionKey key = cannel.register(seletor,SelectionKey.OP_READ);</div><div class="line"><span class="comment">//第二参数 表示 selector对cannel的什么时间感兴趣 包括四种事件1.Connect 2.Accept 3.Read 4.Write</span></div></pre></td></tr></table></figure>
+<p><strong>SelectionKey</strong></p>
+<p><strong>阻塞selector，等待事件唤醒</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> selected = selector.select();</div><div class="line"><span class="comment">//selected = 0 代表没有事件</span></div></pre></td></tr></table></figure>
+<p><strong>识别channel</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">selectionKey.attach(obj);</div><div class="line">Object attObj = selectionKey.attchment();</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/25/人脸检测系列三/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Leex Li">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/leexli.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leex's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/25/人脸检测系列三/" itemprop="url">
+                  人脸检测系列（三）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-25T20:37:08+08:00">
+                2017-04-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这一章节我会主要开始主要讲解通过C语言来实现人脸检测，不过需要注意的是，我们的C语言知识用来实现主要的人脸检测过程，部分细节实现主要还是要通过open CV的类库实现。</p>
+<ul>
+<li><p>配置openCV环境</p>
+<p>本着不要重复造轮子的心态，这里我就直接附上链接，关于<a href="http://blog.csdn.net/u014365862/article/details/53067565" target="_blank" rel="external">mac环境下如何配置openCV</a>，其他的环境可以自行百度下，不是很困难。</p>
+</li>
+<li><p>读取样本文件 (<a href="http://download.csdn.net/detail/leecoding/9825490" target="_blank" rel="external">样本文件</a>上传至CSDN)</p>
+<p>​</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/24/人脸检测系列二/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -825,7 +1207,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -838,7 +1220,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
