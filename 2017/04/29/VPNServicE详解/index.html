@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/29/VPNServicE详解/index.html">
 <meta property="og:site_name" content="Leex's Blog">
 <meta property="og:description" content="TCP基础 数据在网络间传递主要通过tcp／udp传输层协议进行传递，两者都是给予ip协议。 网络传输的时候需要注意的是，当数据超过路由器最大可以传输的单个数据包的时候，数据就会被分割，我们在做VPNService的时候，就需要注意几个地方。 比如接受到的是http数据的时候，一般http中的数据会比较大，我们需要进行分包处理，这时候我们就需要记录这几个数据包，把数据包组合起来之后在回复数据。 重">
-<meta property="og:updated_time" content="2017-04-29T13:43:37.000Z">
+<meta property="og:updated_time" content="2017-04-30T11:16:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VPNServicE详解">
 <meta name="twitter:description" content="TCP基础 数据在网络间传递主要通过tcp／udp传输层协议进行传递，两者都是给予ip协议。 网络传输的时候需要注意的是，当数据超过路由器最大可以传输的单个数据包的时候，数据就会被分割，我们在做VPNService的时候，就需要注意几个地方。 比如接受到的是http数据的时候，一般http中的数据会比较大，我们需要进行分包处理，这时候我们就需要记录这几个数据包，把数据包组合起来之后在回复数据。 重">
@@ -349,6 +349,8 @@
 <p>网络传输的时候需要注意的是，当数据超过路由器最大可以传输的单个数据包的时候，数据就会被分割，我们在做VPNService的时候，就需要注意几个地方。</p>
 <p>比如接受到的是http数据的时候，一般http中的数据会比较大，我们需要进行分包处理，这时候我们就需要记录这几个数据包，把数据包组合起来之后在回复数据。</p>
 <p>重点：HTTP协议一般会对数据进行压缩，这是个大坑，仅仅加密数据，对于HTTP的数据头不会进行压缩处理，我们可以选择先读取出数据压缩的方式，在对数据进行解压。</p>
+<p><strong>如何拼装多个TCP的数据包</strong></p>
+<p>真正进行网络请求的时候，比如常见的HTTP／HTTPS协议，这些协议传递的数据长度一般都会超过IP数据报的最大程度，我们在发送或者接受数据的时候，现在接触到的数据也都是零散的分包数据，要想数据解压不出问题，现在需要考虑拼接出来完整的数据包。或者拦截数据包，修改压缩的方式</p>
 
       
     </div>
@@ -390,6 +392,10 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/27/kotlin学习/" rel="next" title="kotlin学习">
+                <i class="fa fa-chevron-left"></i> kotlin学习
+              </a>
             
           </div>
 
@@ -462,7 +468,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -475,7 +481,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
